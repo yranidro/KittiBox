@@ -203,7 +203,7 @@ def main(_):
 
         # removing predictions <= threshold
         for rect in rectangles:
-            for threshold, idx in enumberate(thresholds):
+            for idx, threshold in enumerate(thresholds):
                 if rect.score >= threshold:
                     accepted_predictions_set[idx].append(rect)
 
@@ -247,11 +247,11 @@ def main(_):
             car_nums.append(len(accepted_predictions))
         guid, imid = im_name_info(im_name)
         num = len(accepted_predictions)
-        result.append('{}/{},{},{},{},{},{},{},{},{},{}'.format(guid,imid,car_nums[0],,car_nums[1],
-                car_nums[2,car_nums[3],car_nums[4],car_nums[5],car_nums[6],car_nums[7],car_nums[8],car_nums[9]))
+        result.append('{}/{},{},{},{},{},{},{},{},{},{}'.format(guid,imid,car_nums[0],car_nums[1],
+                car_nums[2],car_nums[3],car_nums[4],car_nums[5],car_nums[6],car_nums[7],car_nums[8]))
         #print('{}/{},{}'.format(guid,imid,car_num))
-        print('{}/{}  {}/{} {},{},{},{},{},{},{},{},{}'.format(idx, len(im_names), guid,imid, car_nums[0],,car_nums[1],
-                car_nums[2,car_nums[3],car_nums[4],car_nums[5],car_nums[6],car_nums[7],car_nums[8],car_nums[9]))
+        print('{}/{}  {}/{} {},{},{},{},{},{},{},{},{}'.format(idx, len(im_names), guid,imid, car_nums[0],car_nums[1],
+                car_nums[2],car_nums[3],car_nums[4],car_nums[5],car_nums[6],car_nums[7],car_nums[8]))
 
     np.savetxt('fake_out.csv', result, delimiter='\n', fmt="%s")
     
