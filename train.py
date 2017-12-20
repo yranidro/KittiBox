@@ -75,7 +75,11 @@ def main(_):
     train.initialize_training_folder(hypes)
     train.maybe_download_and_extract(hypes)
     logging.info("Start training")
-    train.do_training(hypes)
+    #train.do_training(hypes)
+    
+    train.continue_training("RUNS/GTA_fintune/")
+    #train.continue_training("RUNS/KittiBox_pretrained")
+
 
 
 if __name__ == '__main__':
