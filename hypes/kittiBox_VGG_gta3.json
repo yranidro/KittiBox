@@ -7,8 +7,8 @@
     "evaluator_file" : "../evals/kitti_eval.py"
     },
     "data": {
-        "train_file": "GTA/train.txt",
-        "val_file": "GTA/val.txt",
+        "train_file": "GTA/train3.txt",
+        "val_file": "GTA/val3.txt",
         "truncate_data": false,
         "eval_cmd": "../submodules/KittiObjective2/./evaluate_object2",
         "label_dir": "GTA/label_2"
