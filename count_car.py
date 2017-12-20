@@ -95,14 +95,17 @@ def maybe_download_and_extract(runs_dir):
     return
 
 def im_name_info(im):
-    found = re.search('/test/(.+?)/',im)
-    if found:
-        guid = found.group(1)
-        id_found = re.search('(.+?)_image.jpg',im)
-    if id_found:
-        imid = id_found.group(1)
-        return guid,imid
-    return None,None
+    ids = im.split('/')
+    guid = ids[-2]
+    imid = ids[-1][0:4]    
+    # found = re.search('/test/(.+?)/',im)
+    # if found:
+    #     guid = found.group(1)
+    #     id_found = re.search('(.+?)_image.jpg',im)
+    # if id_found:
+    #     imid = id_found.group(1)
+    #     return guid,imid
+    # return None,None
 
 
 def main(_):
