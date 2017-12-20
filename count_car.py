@@ -97,7 +97,7 @@ def maybe_download_and_extract(runs_dir):
 def im_name_info(im):
     ids = im.split('/')
     guid = ids[-2]
-    imid = ids[-1][0:4]    
+    imid = ids[-1][0:4]
     # found = re.search('/test/(.+?)/',im)
     # if found:
     #     guid = found.group(1)
