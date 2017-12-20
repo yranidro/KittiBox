@@ -196,18 +196,35 @@ def main(_):
             use_stitching=True, rnn_len=1,
             min_conf=0.50, tau=hypes['tau'], color_acc=(0, 255, 0))
 
-        threshold = 0.5
-        accepted_predictions = []
+        threshold1 = 0.5
+        threshold2 = 0.6
+        threshold3 = 0.7
+        threshold4 = 0.8
+        threshold5 = 0.9
+        accepted_predictions1 = []
+        accepted_predictions2 = []
+        accepted_predictions3 = []
+        accepted_predictions4 = []
+        accepted_predictions5 = []
         # removing predictions <= threshold
         for rect in rectangles:
-            if rect.score >= threshold:
-                accepted_predictions.append(rect)
+            if rect.score >= threshold1:
+                accepted_predictions1.append(rect)
+            elif rect.score >= threshold2:
+                accepted_predictions2.append(rect)
+            elif rect.score >= threshold3:
+                accepted_predictions3.append(rect)
+            elif rect.score >= threshold4:
+                accepted_predictions4.append(rect)
+            elif rect.score >= threshold5:
+                accepted_predictions5.append(rect)
+
 
         print('')
-        logging.info("{} Cars detected".format(len(accepted_predictions)))
+        logging.info("{} Cars detected".format(len(accepted_predictions1)))
 
         # Printing coordinates of predicted rects.
-        for i, rect in enumerate(accepted_predictions):
+        for i, rect in enumerate(accepted_predictions1):
             logging.info("")
             logging.info("Coordinates of Box {}".format(i))
             logging.info("    x1: {}".format(rect.x1))
@@ -237,11 +254,15 @@ def main(_):
         logging.warning("https://github.com/MarvinTeichmann/KittiBox/"
                         "issues/15#issuecomment-301800058")
 
-        car_num = len(accepted_predictions)
+        car_num1 = len(accepted_predictions1)
+        car_num2 = len(accepted_predictions2)
+        car_num3 = len(accepted_predictions3)
+        car_num4 = len(accepted_predictions4)
+        car_num5 = len(accepted_predictions5)
         guid, imid = im_name_info(im_name)
-        result.append('{}/{},{}'.format(guid,imid,car_num))
+        result.append('{}/{},{},{},{},{},{}'.format(guid,imid,car_num1,car_num2,car_num3,car_num4,car_num5))
         #print('{}/{},{}'.format(guid,imid,car_num))
-        print('{}/{} car_num={}'.format(idx, len(im_names), car_num))
+        print('{}/{},{},{},{},{},{}'.format(guid,imid,car_num1,car_num2,car_num3,car_num4,car_num5))
 
     np.savetxt('fake_out.csv', result, delimiter='\n', fmt="%s")
     
