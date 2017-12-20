@@ -107,13 +107,13 @@ def im_name_info(im):
 def main(_):
     tv_utils.set_gpus_to_use()
 
-    if FLAGS.input_image is None:
-        logging.error("No input_image was given.")
-        logging.info(
-            "Usage: python demo.py --input_image data/test.png "
-            "[--output_image output_image] [--logdir /path/to/weights] "
-            "[--gpus GPUs_to_use] ")
-        exit(1)
+    # if FLAGS.input_image is None:
+    #     logging.error("No input_image was given.")
+    #     logging.info(
+    #         "Usage: python demo.py --input_image data/test.png "
+    #         "[--output_image output_image] [--logdir /path/to/weights] "
+    #         "[--gpus GPUs_to_use] ")
+    #     exit(1)
 
     if FLAGS.logdir is None:
         # Download and use weights from the MultiNet Paper
