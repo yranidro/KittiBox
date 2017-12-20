@@ -106,6 +106,7 @@ def im_name_info(im):
     #     imid = id_found.group(1)
     #     return guid,imid
     # return None,None
+    return guid,imid
 
 
 def main(_):
