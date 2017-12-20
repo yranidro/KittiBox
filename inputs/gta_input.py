@@ -53,10 +53,10 @@ def read_kitti_anno(label_file, detect_truck):
         else:
             class_id = 1
         bbox = [float(label[1]), float(label[2]), float(label[3]), float(label[4])]
-        if bbox[0] < 0: bbox[0] = 0
-        if bbox[1] < 0: bbox[1] = 0
-        if bbox[2] > 1919: bbox[1] = 1919
-        if bbox[3] > 1055: bbox[1] = 1055
+        if bbox[0] <= 0: bbox[0] = 3
+        if bbox[1] <= 0: bbox[1] = 2
+        if bbox[2] >= 1919: bbox[2] = 1916
+        if bbox[3] >= 1055: bbox[3] = 1053
         object_rect = AnnoLib.AnnoRect(
             x1=float(bbox[0]), y1=float(bbox[1]),
             x2=float(bbox[2]), y2=float(bbox[3]))
