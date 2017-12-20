@@ -7,11 +7,11 @@
     "evaluator_file" : "../evals/kitti_eval.py"
     },
     "data": {
-        "train_file": "../../GTA/train.txt",
-        "val_file": "../../GTA/val.txt",
+        "train_file": "GTA/train.txt",
+        "val_file": "GTA/val.txt",
         "truncate_data": false,
         "eval_cmd": "../submodules/KittiObjective2/./evaluate_object2",
-        "label_dir": "../../GTA/label_2"
+        "label_dir": "GTA/label_2"
     },
     "logging": {
         "display_iter": 200,
@@ -44,10 +44,10 @@
     "rezoom_change_loss": "center",
     "rezoom_w_coords": [-0.25, 0, 0.25],
     "rezoom_h_coords": [-0.25, 0, 0.25],
-    "image_height": 384,
-    "image_width": 1248, 
-    "grid_width": 39,
-    "grid_height": 12,
+    "image_height": 1056,
+    "image_width": 1920, 
+    "grid_width": 60,
+    "grid_height": 33,
     "batch_size": 5, 
     "tau": 0.35,
     "scale_down": 0.1,
@@ -57,5 +57,5 @@
     "num_inner_channel": 500,
     "num_classes": 2,
     "wd": 5e-4,
-    "detect_truck": false
+    "detect_truck": true
 }
