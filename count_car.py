@@ -211,13 +211,13 @@ def main(_):
         for rect in rectangles:
             if rect.score >= threshold1:
                 accepted_predictions1.append(rect)
-            elif rect.score >= threshold2:
+            if rect.score >= threshold2:
                 accepted_predictions2.append(rect)
-            elif rect.score >= threshold3:
+            if rect.score >= threshold3:
                 accepted_predictions3.append(rect)
-            elif rect.score >= threshold4:
+            if rect.score >= threshold4:
                 accepted_predictions4.append(rect)
-            elif rect.score >= threshold5:
+            if rect.score >= threshold5:
                 accepted_predictions5.append(rect)
 
 
